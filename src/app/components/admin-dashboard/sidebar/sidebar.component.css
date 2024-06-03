@@ -1,0 +1,37 @@
+/* Sidebar navigation styles */
+/* 
+.sidebar {
+  width: 0px;
+  overflow: hidden;
+  transition: width 0.5s;
+  color: #fff;
+} */
+
+.sidebar.active {
+  width: 300px;
+}
+
+.sidebar-nav .nav-link {
+  padding: 10px 15px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+}
+
+.sidebar-nav .nav-link:hover,
+.sidebar-nav .nav-link.active {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+
+@media (min-width: 768px) {
+  .sidebar {
+    transform: translateX(0);
+  }
+
+  .toggle-sidebar-btn {
+    display: none;
+  }
+}
+ 

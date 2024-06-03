@@ -1,0 +1,23 @@
+<div class="modal fade" id="departmentModal" tabindex="-1" aria-labelledby="departmentModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="departmentModalLabel">{{ selectedDepartment.id === 0 ? 'Add Department' : 'Edit Department' }}</h5>
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="hideModal()"></button>
+       </div>
+       <div class="modal-body">
+         <form (ngSubmit)="saveDepartment()">
+           <div class="mb-3">
+             <label for="department" class="form-label">Department</label>
+             <select class="form-select" id="department" [(ngModel)]="selectedDepartment.id" name="department" required>
+               <option *ngFor="let department of departments" [value]="department.id">{{ department.name }}</option>
+             </select>
+           </div>
+           <button type="submit" class="btn btn-primary my-1 mx-1"><i class="bi bi-check"></i> Save</button>
+           <button type="button" class="btn btn-danger my-1 mx-1" data-bs-dismiss="modal" (click)="hideModal()"><i class="bi bi-x"></i> Cancel</button>
+         </form>
+       </div>
+     </div>
+   </div>
+ </div>
+ 

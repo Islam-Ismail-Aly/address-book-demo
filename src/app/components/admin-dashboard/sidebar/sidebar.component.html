@@ -1,0 +1,47 @@
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar" [class.active]="isSidebarOpen">
+  <ul class="sidebar-nav" id="sidebar-nav">
+
+    <!-- Dashboard Nav -->
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['dashboard']" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+        <i class="bi bi-grid"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+
+    <!-- Users Nav -->
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['users']" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+        <i class="bi bi-person"></i>
+        <span>Users</span>
+      </a>
+    </li>
+
+    <!-- Address Book Nav -->
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['addressBook']" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+        <i class="bi bi-book"></i>
+        <span>Address Book</span>
+      </a>
+    </li>
+
+    <!-- Departments Nav -->
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['departments']" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+        <i class="bi bi-building"></i>
+        <span>Departments</span>
+      </a>
+    </li>
+
+    <!-- Job Titles Nav -->
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['jobs']" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
+        <i class="bi bi-briefcase"></i>
+        <span>Job Titles</span>
+      </a>
+    </li>
+
+  </ul>
+</aside>
+<!-- End Sidebar -->

@@ -1,0 +1,84 @@
+<div class="parent">
+  <div class="form-container">
+    <div class="signup-container" id="signup-containerlog">
+      <h1 class="title">Signup</h1>
+      <p class="desc">Create your account</p>
+      <form action="#" class="row g-3" [formGroup]="registerForm" (submit)="onSubmit()">
+
+        <div class="input-container">
+          <input type="text" formControlName="firstName" placeholder="First name" autofocus="on" maxlength="30">
+        </div>
+        <div class="mt-0" *ngIf="getFirstName.invalid && (getFirstName.dirty || getFirstName.touched)">
+          <span class="text-danger desc" *ngIf="getFirstName.hasError('required')">First name is required.</span>
+          <span class="text-danger desc" *ngIf="getFirstName.hasError('maxlength')">First name cannot be more than 30
+            characters long.</span>
+        </div>
+
+        <div class="input-container">
+          <input type="text" formControlName="lastName" placeholder="Last name" autofocus="on" maxlength="30">
+        </div>
+        <div class="mt-0" *ngIf="getLastName.invalid && (getLastName.dirty || getLastName.touched)">
+          <span class="text-danger desc" *ngIf="getLastName.hasError('required')">Last name is required.</span>
+          <span class="text-danger desc" *ngIf="getLastName.hasError('maxlength')">Last name cannot be more than 30
+            characters long.</span>
+        </div>
+
+        <div class="input-container">
+          <input type="text" formControlName="userName" placeholder="Username" autofocus="on" maxlength="30">
+        </div>
+        <div class="mt-0" *ngIf="getUserName.invalid && (getUserName.dirty || getUserName.touched)">
+          <span class="text-danger desc" *ngIf="getUserName.hasError('required')">Username is required.</span>
+          <span class="text-danger desc" *ngIf="getUserName.hasError('maxlength')">Username cannot be more than 30 characters
+            long.</span>
+        </div>
+
+        <div class="input-container">
+          <input type="text" formControlName="address" placeholder="Your address" autofocus="on" maxlength="250">
+        </div>
+        <div class="mt-0" *ngIf="getAddress.invalid && (getAddress.dirty || getAddress.touched)">
+          <span class="text-danger desc" *ngIf="getAddress.hasError('required')">Address is required.</span>
+          <span class="text-danger desc" *ngIf="getAddress.hasError('maxlength')">Address cannot be more than 250 characters
+            long.</span>
+        </div>
+
+        <div class="input-container">
+          <input type="email" formControlName="email" placeholder="Email address" autofocus="on" maxlength="20">
+        </div>
+        <div class="mt-0" *ngIf="getEmail.invalid && (getEmail.dirty || getEmail.touched)">
+          <span class="text-danger desc" *ngIf="getEmail.hasError('required')">Email is required.</span>
+          <span class="text-danger desc" *ngIf="getEmail.hasError('email')">Invalid email format.</span>
+          <span class="text-danger desc" *ngIf="getEmail.hasError('maxlength')">Email cannot be more than 20 characters
+            long.</span>
+        </div>
+
+        <div class="input-container">
+          <input type="password" formControlName="passwordUser" placeholder="Your password" autofocus="on"
+            maxlength="8">
+        </div>
+        <div class="mt-0" *ngIf="getPassword.invalid && (getPassword.dirty || getPassword.touched)">
+          <span class="text-danger desc" *ngIf="getPassword.hasError('required')">Password is required.</span>
+          <span class="text-danger desc" *ngIf="getPassword.hasError('minlength')">Password must be at least 8 characters
+            long.</span>
+        </div>
+
+        <div class="input-container">
+          <input type="password" formControlName="confirmPassword" placeholder="Confirm password" autofocus="on"
+            maxlength="8">
+        </div>
+        <div class="mt-0" *ngIf="getConfirmPassword.invalid && (getConfirmPassword.dirty || getConfirmPassword.touched)">
+          <span class="text-danger desc" *ngIf="getConfirmPassword.hasError('required')">Confirm password is required.</span>
+          <span class="text-danger desc" *ngIf="getConfirmPassword.hasError('minlength')">Confirm password must be at least 8
+            characters long.</span>
+        </div>
+
+        <div class="account-controls">
+          <a href="#">Forgot Password?</a>
+          <button type="submit">Register</button>
+        </div>
+      </form>
+   </div>
+   <div class="placeholder-banner moving-image"  id="bannerlog">
+      <img src="assets/Img/login.jpg" alt="" class="banner">
+   </div>
+</div>
+</div>

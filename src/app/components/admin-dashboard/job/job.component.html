@@ -1,0 +1,44 @@
+<main id="main" class="main">
+  <section class="section dashboard">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Job Title Management</h5>
+            <button class="btn btn-success mb-3" (click)="addJob()"><i class="bi bi-plus"></i> Add Job</button>
+            <table #dataTable class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Title</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let job of jobs">
+                  <td>{{ job.title }}</td>
+                  <td>
+                    <button title="Edit" name="Edit" class="btn btn-sm btn-primary rounded-pill mx-2" (click)="editJob(job)">
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button title="Delete" name="Delete" class="btn btn-sm btn-outline-danger rounded-pill mx-2" (click)="deleteJob(job.id)">
+                      <i class="bi bi-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr *ngIf="jobs.length === 0">
+                  <td colspan="6">
+                    <div class="bg-warning-subtle p-2 rounded my-2 text-center">
+                      <i class="bi bi-exclamation-triangle-fill text-warning"></i>
+                      <span> No job titles found.</span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <app-job-add-modal [selectedJob]="selectedJob" [jobs]="jobs" (JobSaved)="loadJobs()"></app-job-add-modal>
+</main>

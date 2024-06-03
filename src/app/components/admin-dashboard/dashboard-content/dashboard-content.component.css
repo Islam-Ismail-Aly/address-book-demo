@@ -1,0 +1,56 @@
+a{
+   text-decoration: none;
+}
+
+/* Custom card styles */
+.card {
+   margin-bottom: 30px;
+   border: none;
+   border-radius: 10px;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .card .card-icon {
+   width: 60px;
+   height: 60px;
+   background-color: #f0f2f5;
+   color: #444;
+   font-size: 24px;
+ }
+ 
+ .card h5 {
+   font-size: 16px;
+   font-weight: 600;
+   margin-bottom: 10px;
+ }
+ 
+ .card h6 {
+   font-size: 24px;
+   font-weight: 700;
+ }
+ 
+ .card-body {
+   padding: 20px;
+ }
+ 
+ /* Specific card styles */
+ .info-card.customers-card .card-icon {
+   background-color: #e0f7fa;
+   color: #00796b;
+ }
+ 
+ .info-card.address-book-card .card-icon {
+   background-color: #fce4ec;
+   color: #c2185b;
+ }
+ 
+ .info-card.departments-card .card-icon {
+   background-color: #f3e5f5;
+   color: #6a1b9a;
+ }
+ 
+ .info-card.job-titles-card .card-icon {
+   background-color: #fff3e0;
+   color: #ef6c00;
+ }
+ 

@@ -1,0 +1,110 @@
+<main id="main" class="main">
+   <section class="section dashboard">
+     <div class="row">
+       <div class="col-12">
+         <div class="card">
+           <div class="card-body">
+             <h5 class="card-title">Address Book Management</h5>
+             <button class="btn btn-success mb-3" (click)="addAddressBook()">
+               <i class="bi bi-person-plus"></i> Add Address Book Entry</button>
+               
+             <div class="card-header">
+               <div class="row">
+                 <div class="col">
+                   <input title="startDate" type="date" class="form-control" [(ngModel)]="startDate">
+                 </div>
+                 <div class="col">
+                   <input title="endDate" type="date" class="form-control" [(ngModel)]="endDate">
+                 </div>
+                 <div class="col">
+                   <button class="btn btn-primary" (click)="applyDateFilter()">
+                     <i class="bi bi-funnel"></i> Apply Filter</button>
+                 </div>
+                 <div class="col">
+                  <button (click)="exportToExcel()" class="btn btn-success">
+                     <i class="bi bi-file-earmark-spreadsheet"></i> Export to Excel
+                 </button>                 
+                 </div>
+               </div>
+             </div>   
+             <div *ngIf="selectedAddressBook.id !== 0 || selectedAddressBook.fullName">
+               <form (ngSubmit)="saveAddressBook()">
+                 <div class="mb-3">
+                   <label for="fullName" class="form-label">Full Name</label>
+                   <input type="text" class="form-control" id="fullName" [(ngModel)]="selectedAddressBook.fullName" name="fullName" required>
+                 </div>
+                 <div class="mb-3">
+                  <label for="jobTitle" class="form-label">Job Title</label>
+                  <select class="form-select" id="jobTitle" name="jobTitle" required>
+                    <option *ngFor="let title of jobs" [value]="title.id">{{ title.title }}</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="department" class="form-label">Department</label>
+                  <select class="form-select" id="department" name="department" required>
+                    <option *ngFor="let department of departments" [value]="department.id">{{ department.name }}</option>
+                  </select>
+                </div>
+                 <div class="mb-3">
+                   <label for="mobileNumber" class="form-label">Mobile Number</label>
+                   <input type="text" class="form-control" id="mobileNumber" [(ngModel)]="selectedAddressBook.mobileNumber" name="mobileNumber" required>
+                 </div>
+                 <div class="mb-3">
+                   <label for="email" class="form-label">Email</label>
+                   <input type="email" class="form-control" id="email" [(ngModel)]="selectedAddressBook.email" name="email" required>
+                 </div>
+                 <div>
+                  <button type="submit" class="btn btn-primary my-2 mx-2">
+                     <i class="bi bi-check"></i> Save</button>
+                    <button type="button" class="btn btn-danger my-2 mx-2" (click)="selectedAddressBook = initializeAddressBook()">
+                     <i class="bi bi-x"></i> Cancel</button>
+                  </div>
+               </form>
+             </div>          
+             <table class="table table-striped">
+               <thead>
+                 <tr>
+                   <th scope="col-sm">Full Name</th>
+                   <th scope="col-sm">Job Title</th>
+                   <th scope="col-sm">Department</th>
+                   <th scope="col-sm">Mobile Number</th>
+                   <th scope="col-sm">Age</th>
+                   <th scope="col-sm">Email</th>
+                   <th scope="col-sm">Actions</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr *ngFor="let ab of addressBooks">
+                   <td>{{ ab.fullName }}</td>
+                   <td>{{ ab.jobTitle }}</td>
+                   <td>{{ ab.department }}</td>
+                   <td>{{ ab.mobileNumber }}</td>
+                   <td>{{ ab.age }}</td>
+                   <td>{{ ab.email }}</td>
+                   <td>
+                     <button title="Edit" name="Edit" class="btn btn-sm btn-primary rounded-pill mx-2" (click)="editAddressBook(ab)">
+                       <i class="bi bi-pencil-square"></i>
+                     </button>
+                     <button title="Delete" name="Delete" class="btn btn-sm btn-outline-danger rounded-pill mx-2" (click)="deleteAddressBook(ab.id)">
+                       <i class="bi bi-trash"></i>
+                     </button>
+                   </td>
+                 </tr>
+                 <tr *ngIf="addressBooks.length === 0">
+                   <td colspan="6">
+                     <div class="bg-warning-subtle p-2 rounded my-2 text-center">
+                       <i class="bi bi-exclamation-triangle-fill text-warning"></i>
+                       <span> No address book entries found</span>
+                     </div>
+                   </td>
+                 </tr>
+               </tbody>
+             </table>
+             
+           </div>
+         </div>
+       </div>
+     </div>
+   </section>
+ </main>
+ 

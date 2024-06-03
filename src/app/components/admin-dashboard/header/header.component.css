@@ -1,0 +1,27 @@
+a{
+   text-decoration: none;
+}
+
+.header {
+   background-color: #f8f9fa;
+   padding: 10px 20px;
+   box-shadow: 0 2px 4px rgba(0,0,0,.1);
+ }
+ 
+ .nav-link {
+   color: #555;
+   transition: color 0.3s;
+ }
+ 
+ .nav-link:hover {
+   color: #007bff;
+ }
+ 
+ .toggle-sidebar-btn {
+   cursor: pointer;
+ }
+ 
+
+ 
+ 
+ 

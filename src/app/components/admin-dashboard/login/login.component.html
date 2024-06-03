@@ -1,0 +1,36 @@
+<div class="parent">
+    <div class="form-container">
+       <div class="login-container" id="login-containerlog">
+          <h1 class="title">Log In</h1>
+          <form class="row g-3" [formGroup]="loginForm" (submit)="onSubmit()">
+             <div class="input-container">
+                <input type="email" formControlName="email" placeholder="Enter your email address" autofocus="on" maxlength="30" required>
+            </div>
+            @if (getEmail.invalid && (getEmail.dirty || getEmail.touched)) {
+               <span class="text-danger" *ngIf="getEmail.hasError('required')">Email is required.</span>
+               <span class="text-danger" *ngIf="getEmail.hasError('email')">Invalid email format.</span>
+               <span class="text-danger" *ngIf="getEmail.hasError('maxlength')">Email cannot be more than 30 characters long.</span>
+               }
+             <div class="input-container">
+                <input type="password" formControlName="password" placeholder="Enter your password" autofocus="on" maxlength="8" required>
+                
+            </div>
+            @if (getPassword.invalid && (getPassword.dirty || getPassword.touched)) {
+               <span class="text-danger" *ngIf="getPassword.hasError('required')">Password is required.</span>
+               <span class="text-danger" *ngIf="getPassword.hasError('minlength')">Password must be at least 8 characters long.</span>
+               }
+             <div class="account-controls">
+                <a href="#">Forgot Password?</a>
+                <button type="submit">Login</button>
+             </div>
+          </form>
+    
+          <span class="line"></span>
+          <span class="signup-text">Don't have an account yet? <a routerLink="/register" id="signup-form-togglerlog">Sign up</a></span>
+       </div>
+       <div class="placeholder-banner moving-image"  id="bannerlog">
+          <img src="assets/Img/login.jpg" alt="" class="banner">
+       </div>
+    </div>
+ </div>
+ 
