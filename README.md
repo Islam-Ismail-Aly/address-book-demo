@@ -25,8 +25,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ![JobTitle](https://github.com/Islam-Ismail-Aly/address-book-demo/assets/23121933/ffa6b757-57d8-414e-958f-51445d8d51bd)
 
-![Job](https://github.com/Islam-Ismail-Aly/address-book-demo/assets/23121933/08bb5555-4154-4631-bca1-ae3a1d95a6b6)
-
 ![Filter](https://github.com/Islam-Ismail-Aly/address-book-demo/assets/23121933/8741a2a5-8e19-4be7-848a-a5195fcfb805)
 
 ![EditJob](https://github.com/Islam-Ismail-Aly/address-book-demo/assets/23121933/dbc90f4c-3738-478b-bed8-e58b5dd551e2)
